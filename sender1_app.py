@@ -4,7 +4,7 @@ from datetime import datetime
 
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/time')
 def send_time():
     current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     requests.post('http://127.0.0.1:5000/', json={"time": current_time})
